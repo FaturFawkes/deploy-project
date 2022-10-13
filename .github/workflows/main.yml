@@ -17,6 +17,7 @@ jobs:
           cd downloads/myprj
           git pull origin main
           docker stop myprj
+          docker rm myprj
           docker build -t myprj
           docker run --name myprj -p 8000:8000 -d myprj
           
