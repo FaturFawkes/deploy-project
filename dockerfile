@@ -11,7 +11,6 @@ ADD . /app
 
 ##buat executeable
 RUN go build -o main .
-RUN ["chmod", "+x", "/app"]
 
 ##jalankan executeable
 CMD ["/app/main"]
