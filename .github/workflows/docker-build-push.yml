@@ -25,17 +25,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: faturfawkes/myprj:latest
-      - 
-        name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            docker stop myprj
-            docker rm myprj
-            docker rmi faturfawkes/myprj_img
-            docker run --name myprj -d -p 8000:8000 faturfawkes/myprj_img
+          tags: faturfawkes/myprj_img:latest
