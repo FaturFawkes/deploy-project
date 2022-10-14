@@ -38,4 +38,4 @@ jobs:
             docker stop myprj
             docker rm myprj
             docker rmi faturfawkes/myprj_img
-            docker run --name myprj -d -p 8000:8000 faturfawkes/myprj_img
+            docker run --name myprj --link mysql:3306 -d -p 8000:8000 faturfawkes/myprj_img
