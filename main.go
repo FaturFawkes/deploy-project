@@ -35,7 +35,7 @@ func AllUser(db *gorm.DB) echo.HandlerFunc {
 }
 
 func connectDB() *gorm.DB {
-	dsn := "root:@tcp(172.31.0.2:3306)/test?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:@tcp(mysql:3306)/test?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Error(err.Error())
